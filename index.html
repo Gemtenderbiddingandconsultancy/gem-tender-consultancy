@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P0QTVDS1KS"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -12,9 +13,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- GOOGLE SITE VERIFICATION -->
     <meta name="google-site-verification" content="XYZ123YOURCODEHERE..." />
 
     <title>Gem Tender bidding and consultancy | Government Tender & GeM Portal Consultant India</title>
+    <!-- Premium Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -375,6 +378,7 @@
 </head>
 <body>
 
+    <!-- Top contact ticker bar -->
     <div class="top-bar">
         <div><i class="fas fa-envelope"></i> Tendergem42@gmail.com | 📍 Ahmedabad, Gujarat</div>
         <div>
@@ -382,6 +386,7 @@
         </div>
     </div>
 
+    <!-- Main Corporate Brand Header Nav -->
     <header>
         <div class="logo"> Gem Tender bidding and <span>consultancy</span></div>
         <nav>
@@ -394,12 +399,14 @@
         </nav>
     </header>
 
+    <!-- Hero Section Area -->
     <div class="hero" id="home">
         <h1>Empowering Your Business with <br>Government Tenders & GeM Portal</h1>
         <p>India's leading consultancy delivering 100% compliant documentation, error-free technical bids, and seamless e-procurement onboarding services.</p>
         <a href="#contact" class="btn btn-primary">Request Free Consultation</a>
     </div>
 
+    <!-- Live Trust Track Counters -->
     <div class="stats-bar">
         <div class="stat-item">
             <h3>100%</h3>
@@ -415,6 +422,7 @@
         </div>
     </div>
 
+    <!-- About Company Section -->
     <div class="section" id="about">
         <div class="about-container">
             <div class="about-text">
@@ -442,6 +450,7 @@
         </div>
     </div>
 
+    <!-- Premium Service Offerings Grid Layout -->
     <div class="section bg-light" id="services">
         <div class="section-header">
             <h2>Our Core Expertise</h2>
@@ -449,6 +458,7 @@
         </div>
         
         <div class="grid">
+            <!-- Card 1 -->
             <div class="card">
                 <i class="fas fa-laptop-code"></i>
                 <h3>1) GeM Portal Services</h3>
@@ -459,6 +469,7 @@
                 </ul>
             </div>
 
+            <!-- Card 2 -->
             <div class="card">
                 <i class="fas fa-file-signature"></i>
                 <h3>2) Tender Bidding & Tech Support</h3>
@@ -469,6 +480,7 @@
                 </ul>
             </div>
 
+            <!-- Card 3 -->
             <div class="card">
                 <i class="fas fa-network-wired"></i>
                 <h3>3) Portal Onboarding & DSC</h3>
@@ -481,12 +493,14 @@
         </div>
     </div>
 
+    <!-- Live Tender Search Engine (City Wise Gujarat) -->
     <div class="section" id="live-tenders" style="background-color: #f4f7fa;">
         <div class="section-header">
             <h2>Gujarat Live Tenders Search</h2>
             <p>Apni city ke anusar live government tenders search karein aur details dekhne ke liye click karein.</p>
         </div>
 
+        <!-- Search Feature -->
         <div class="search-container">
             <select id="cityFilter" onchange="filterTenders()">
                 <option value="">Sabhi Cities (All Gujarat)</option>
@@ -494,36 +508,12 @@
                 <option value="Surat">Surat</option>
                 <option value="Vadodara">Vadodara</option>
                 <option value="Rajkot">Rajkot</option>
-                <option value="Bhavnagar">Bhavnagar</option>
-                <option value="Jamnagar">Jamnagar</option>
-                <option value="Junagadh">Junagadh</option>
                 <option value="Gandhinagar">Gandhinagar</option>
-                <option value="Anand">Anand</option>
-                <option value="Navsari">Navsari</option>
-                <option value="Surendranagar">Surendranagar</option>
-                <option value="Morbi">Morbi</option>
-                <option value="Gandhidham">Gandhidham</option>
-                <option value="Nadiad">Nadiad</option>
-                <option value="Bharuch">Bharuch</option>
-                <option value="Patan">Patan</option>
-                <option value="Porbandar">Porbandar</option>
-                <option value="Mehsana">Mehsana</option>
-                <option value="Bhuj">Bhuj</option>
-                <option value="Veraval">Veraval</option>
-                <option value="Vapi">Vapi</option>
-                <option value="Valsad">Valsad</option>
-                <option value="Godhra">Godhra</option>
-                <option value="Palanpur">Palanpur</option>
-                <option value="Himmatnagar">Himmatnagar</option>
-                <option value="Kalol">Kalol</option>
-                <option value="Botad">Botad</option>
-                <option value="Amreli">Amreli</option>
-                <option value="Gondal">Gondal</option>
-                <option value="Jetpur">Jetpur</option>
             </select>
             <input type="text" id="keywordInput" onkeyup="filterTenders()" placeholder="Tender keyword search karein (e.g. Road, Civil, Digital)...">
         </div>
 
+        <!-- Tender Table -->
         <div class="tender-table-wrapper">
             <table class="tender-table" id="tenderTable">
                 <thead>
@@ -536,14 +526,15 @@
                     </tr>
                 </thead>
                 <tbody id="tenderData">
-                    <tr>
-                        <td colspan="5" style="text-align:center;">Live data load ho raha hai...</td>
-                    </tr>
-                </tbody>
+    <tr>
+        <td colspan="5" style="text-align:center;">Live data load ho raha hai...</td>
+    </tr>
+</tbody>
             </table>
         </div>
     </div>
 
+    <!-- DYNAMIC TENDER DETAIL POPUP MODAL WINDOW -->
     <div id="tenderModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal()">&times;</span>
@@ -566,6 +557,7 @@
         </div>
     </div>
 
+    <!-- SECTION: Authority Tenders List -->
     <div class="section" id="authorities" style="background-color: #fff;">
         <div class="section-header">
             <h2>Major Live Authority Tenders</h2>
@@ -591,6 +583,7 @@
         </div>
     </div>
 
+    <!-- Contact & Consultation Lead Box -->
     <div class="section bg-light" id="contact">
         <div class="contact-container">
             <div class="contact-details">
@@ -614,6 +607,7 @@
                 </div>
             </div>
 
+            <!-- Client Contact Query Form -->
             <div class="consultation-form">
                 <h4 style="margin-bottom: 20px; color: var(--primary); font-size: 1.3rem;">Request Quote / Call-Back</h4>
                 <form action="mailto:Tendergem42@gmail.com" method="post" enctype="text/plain">
@@ -632,14 +626,17 @@
         </div>
     </div>
 
+    <!-- Footer Copyright Block -->
     <footer>
         <p>&copy; 2026 Gem Tender bidding and consultancy. All Rights Reserved. | Managed by Corporate Procurement Networks.</p>
     </footer>
 
+    <!-- Direct Quick Chat Floating Widget (WhatsApp) -->
     <a href="https://wa.me/919726407267?text=Hello%20Baldev%20Ji,%20I%20visited%20your%20Corporate%20Portal%20and%20want%20to%20consult%20regarding%20an%20upcoming%20Government%20Tender/GeM%20service." class="whatsapp-sticky" target="_blank">
         <i class="fab fa-whatsapp" style="font-size: 1.4rem;"></i> Chat with Expert
     </a>
 
+    <!-- JavaScript For Live Filter & Modal Popup Engine -->
     <script>
         function filterTenders() {
             var cityFilter = document.getElementById("cityFilter").value.toLowerCase();
@@ -663,34 +660,62 @@
             }
         }
 
-        // --- FETCH REAL DATA FROM TENDERS.JSON AND INJECT INTO TABLE ---
-        async function loadTenders() {
-            try {
-                const response = await fetch("tenders.json");
-                const tenders = await response.json();
-                let output = "";
-                
-                if(tenders.length === 0) {
-                    document.getElementById("tenderData").innerHTML = `<tr><td colspan="5" style="text-align:center;">Abhi koi live tender available nahi hai.</td></tr>`;
-                    return;
-                }
+        // --- POPUP MODAL LOGIC ENGINE ---
+        document.addEventListener("DOMContentLoaded", function() {
+            var buttons = document.querySelectorAll(".open-tender-btn");
+            var modal = document.getElementById("tenderModal");
 
-                tenders.forEach(t => {
-                    output += `
-                    <tr data-id="${t.id || ''}" data-auth="${t.authority || ''}" data-title="${t.name || ''}" data-city="${t.city || ''}" data-value="${t.value || 'As per doc'}" data-emd="${t.emd || 'Refer doc'}">
-                        <td><strong>${t.id || ''}</strong><br><small style="color:#666;">${t.authority || ''}</small></td>
-                        <td>${t.name || ''}</td>
-                        <td><span class="badge-city">${t.city || ''}</span></td>
-                        <td><span style="color:#e05e00; font-weight:600;">${t.due_date || ''}</span></td>
-                        <td><button class="btn btn-primary open-tender-btn" style="padding: 6px 15px; font-size:0.9rem;">View</button></td>
-                    </tr>`;
+            buttons.forEach(function(btn) {
+                btn.addEventListener("click", function() {
+                    var row = this.closest("tr");
+                    
+                    // Fetch details from row data-attributes
+                    var id = row.getAttribute("data-id");
+                    var auth = row.getAttribute("data-auth");
+                    var title = row.getAttribute("data-title");
+                    var city = row.getAttribute("data-city");
+                    var value = row.getAttribute("data-value");
+                    var emd = row.getAttribute("data-emd");
+                    var date = row.cells[3].innerText;
+
+                    // Inject details into modal popup
+                    document.getElementById("modalTenderTitle").innerText = title;
+                    document.getElementById("modalTenderId").innerText = id;
+                    document.getElementById("modalTenderAuth").innerText = auth;
+                    document.getElementById("modalTenderCity").innerText = city;
+                    document.getElementById("modalTenderValue").innerText = value;
+                    document.getElementById("modalTenderEmd").innerText = emd;
+                    document.getElementById("modalTenderDate").innerText = date;
+
+                    // Dynamically customize WhatsApp button text based on tender clicked
+                    var waText = encodeURIComponent("Hello Baldev Ji, I want to consult regarding Tender ID: " + id + " (" + title + ") for city " + city);
+                    document.getElementById("modalWhatsAppBtn").href = "https://wa.me/919726407267?text=" + waText;
+
+                    // Display modal
+                    modal.style.display = "flex";
                 });
-                
-                document.getElementById("tenderData").innerHTML = output;
-                setupModalTriggers();
-                
-            } <script>
-async function loadTenders()
+            });
+        });
+
+        function closeModal() {
+            document.getElementById("tenderModal").style.display = "none";
+        }
+
+        // Close modal if user clicks outside the box
+        window.onclick = function(event) {
+            var modal = document.getElementById("tenderModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+
+<script>
+async function loadTenders(){
+ try{
+  const r=await fetch("tenders.json");
+  const tenders=await r.json();
   let out="";
   tenders.forEach(t=>{
    out+=`<tr data-id="${t.id||''}" data-auth="${t.authority||''}" data-title="${t.name||t.title||''}" data-city="${t.city||''}" data-value="${t.value||'N/A'}" data-emd="${t.emd||'N/A'}">
