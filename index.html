@@ -697,93 +697,18 @@
             });
         });
 
-        // --- POPUP MODAL LOGIC ENGINE FOR DYNAMIC DATA ---
-    let tenderList = [];
-
-    // 1. JSON file se data load karne ka function
-    async function fetchLiveTenders() {
-        try {
-            // Yeh file aapke computer me python banayega
-            const response = await fetch('tenders.json');
-            tenderList = await response.json();
-            renderTenders(tenderList);
-        } catch (error) {
-            console.error("Data loading issue:", error);
-            document.getElementById('tenderData').innerHTML = `<tr><td colspan="5" style="text-align:center; color:red;">Live tenders connect nahi ho paa rahe hain. (tenders.json missing)</td></tr>`;
-        }
-    }
-
-    // 2. Data ko table rows me convert karne ka function
-    function renderTenders(data) {
-        const tableBody = document.getElementById('tenderData');
-        tableBody.innerHTML = ''; 
-
-        if (data.length === 0) {
-            tableBody.innerHTML = `<tr><td colspan="5" style="text-align:center;">Koi active tender nahi mila.</td></tr>`;
-            return;
+        function closeModal() {
+            document.getElementById("tenderModal").style.display = "none";
         }
 
-        data.forEach(tender => {
-            const row = document.createElement('tr');
-            // City filter support karne ke liye attribute set kiya
-            row.setAttribute('data-city', tender.city || '');
-            
-            row.innerHTML = `
-                <td><strong>${tender.id}</strong><br><small>${tender.authority || ''}</small></td>
-                <td>${tender.name}</td>
-                <td><span class="badge-city">${tender.city}</span></td>
-                <td>${tender.due_date || 'N/A'}</td>
-                <td><button class="btn btn-primary open-tender-btn" style="padding:6px 12px; font-size:0.85rem;">View Details</button></td>
-            `;
-
-            // Click karne par popup modal open karne ka code
-            row.querySelector('.open-tender-btn').addEventListener('click', function() {
-                openTenderDetails(tender);
-            });
-
-            tableBody.appendChild(row);
-        });
-    }
-
-    // 3. Search aur City dono filter handle karne ka function
-    function filterTenders() {
-        const cityFilter = document.getElementById("cityFilter").value.toLowerCase();
-        const keywordFilter = document.getElementById("keywordInput").value.toLowerCase();
-
-        const filtered = tenderList.filter(tender => {
-            const matchesCity = cityFilter === "" || (tender.city && tender.city.toLowerCase().includes(cityFilter));
-            const matchesKeyword = tender.name.toLowerCase().includes(keywordFilter) || tender.id.toLowerCase().includes(keywordFilter);
-            return matchesCity && matchesKeyword;
-        });
-
-        renderTenders(filtered);
-    }
-
-    // 4. Modal Popup me data load karne ka function
-    function openTenderDetails(tender) {
-        document.getElementById("modalTenderTitle").innerText = tender.name;
-        document.getElementById("modalTenderId").innerText = tender.id;
-        document.getElementById("modalTenderAuth").innerText = tender.authority || "Govt Portal";
-        document.getElementById("modalTenderCity").innerText = tender.city;
-        document.getElementById("modalTenderValue").innerText = tender.value || "As per document";
-        document.getElementById("modalTenderEmd").innerText = tender.emd || "Refer Doc";
-        document.getElementById("modalTenderDate").innerText = tender.due_date || "N/A";
-
-        const waText = encodeURIComponent("Hello Baldev Ji, I want to consult regarding Tender ID: " + tender.id + " (" + tender.name + ") for city " + tender.city);
-        document.getElementById("modalWhatsAppBtn").href = "https://wa.me/919726407267?text=" + waText;
-
-        document.getElementById("tenderModal").style.display = "flex";
-    }
-
-    function closeModal() {
-        document.getElementById("tenderModal").style.display = "none";
-    }
-
-    // Page load hote hi data fetch karein
-    window.onload = fetchLiveTenders;
-</script>
-</body>
-</html>
+        // Close modal if user clicks outside the box
+        window.onclick = function(event) {
+            var modal = document.getElementById("tenderModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 </html>
