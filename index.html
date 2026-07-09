@@ -690,10 +690,7 @@
                 setupModalTriggers();
                 
             } <script>
-async function loadTenders(){
- try{
-  const r=await fetch("tenders.json");
-  const tenders=await r.json();
+async function loadTenders()
   let out="";
   tenders.forEach(t=>{
    out+=`<tr data-id="${t.id||''}" data-auth="${t.authority||''}" data-title="${t.name||t.title||''}" data-city="${t.city||''}" data-value="${t.value||'N/A'}" data-emd="${t.emd||'N/A'}">
