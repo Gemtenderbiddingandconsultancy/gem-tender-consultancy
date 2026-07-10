@@ -556,22 +556,12 @@
     </tr>
 </tbody>
             </table>
-<div style="text-align: center; margin: 30px 0;">
-    <button id="viewAllBtn" style="
-        background-color: #FF6F00; 
-        color: white; 
-        border: none; 
-        padding: 12px 30px; 
-        font-size: 16px; 
-        font-weight: bold; 
-        border-radius: 5px; 
-        cursor: pointer; 
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        display: none; /* Shuruat me hidden rahega agar 10 se kam tender hon */
-    ">
-        View All Tenders
-    </button>
-</div>        </div>
+        </div>
+        <div style="text-align: center; margin-top: 25px;">
+            <button id="viewAllBtn" class="btn btn-primary" style="display: none; background-color: var(--secondary); padding: 12px 35px; font-size: 1rem;">
+                View All Tenders
+            </button>
+        </div>
     </div>
 
     <!-- DYNAMIC TENDER DETAIL POPUP MODAL WINDOW -->
@@ -766,6 +756,27 @@ async function loadTenders(){
 <td><button class="btn btn-primary open-tender-btn">View</button></td></tr>`;
   });
   document.getElementById("tenderData").innerHTML=out;
+
+  // --- VIEW MORE / LIMIT TO 10 LOGIC START ---
+  const rows = document.querySelectorAll("#tenderData tr");
+  const viewAllBtn = document.getElementById("viewAllBtn");
+
+  if (rows.length > 10) {
+      // 10 ke baad waale saare tenders ko shuruat me hide karo
+      for (let i = 10; i < rows.length; i++) {
+          rows[i].style.display = "none";
+      }
+      // Button ko show karo
+      viewAllBtn.style.display = "inline-block";
+  }
+
+  // Button click hone par saare tenders dikhao
+  viewAllBtn.onclick = function() {
+      rows.forEach(row => row.style.display = "");
+      viewAllBtn.style.display = "none"; // Button ko hide kar do
+  };
+  // --- VIEW MORE LOGIC END ---
+
   document.querySelectorAll(".open-tender-btn").forEach(btn=>{
    btn.onclick=function(){
     const row=this.closest("tr");
@@ -783,38 +794,6 @@ async function loadTenders(){
  }catch(e){console.log(e);}
 }
 document.addEventListener("DOMContentLoaded",loadTenders);
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    // Apni table ki ID yahan check kar lein
-    const table = document.getElementById("tenderTable") || document.querySelector("table");
-    
-    if (table) {
-        // Table ke andar ke saare rows (tr) select karein, header ko chhodkar
-        const rows = table.querySelectorAll("tbody tr");
-        const viewAllBtn = document.getElementById("viewAllBtn");
-
-        // Agar tenders 10 se zyada hain
-        if (rows.length > 10) {
-            // 10th row ke baad waale saare tenders ko shuruat me hide kar do
-            for (let i = 10; i < rows.length; i++) {
-                rows[i].style.display = "none";
-            }
-            // "View All Tenders" button ko screen par dikhao
-            viewAllBtn.style.display = "inline-block";
-        }
-
-        // Jab user button par click kare
-        viewAllBtn.addEventListener("click", function() {
-            // Saare hidden rows ko wapas dikhao
-            rows.forEach(row => {
-                row.style.display = "";
-            });
-            // Button ko hide kar do kyunki ab saare tenders dikh rahe hain
-            viewAllBtn.style.display = "none";
-        });
-    }
-});
 </script>
 </body>
 </html>
